@@ -30,8 +30,8 @@ export class PokemonListComponent implements OnInit {
           .subscribe((unqiueResponse: any) => {
             this.pokemons.push(unqiueResponse);
             console.log(this.pokemons);
-          })
-      })
+          });
+      });
     })
-  }
+  };
 }
