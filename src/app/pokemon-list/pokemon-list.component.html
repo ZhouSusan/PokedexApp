@@ -12,8 +12,8 @@
         <p>Weight: <b> {{pokemon.weight }} </b></p>
         <p>Health: <b>{{ pokemon.stats[0].base_stat }}</b></p>
         <p>Attack Power: <b> {{ pokemon.stats[1].base_stat }}</b></p>
-        <p>Abilities: <b> {{ pokemon.abilities[0].ability.name }}, {{ pokemon.abilities[1].ability.name }}</b></p>
+        <p>Ability: <b> {{ pokemon.abilities[0].ability.name }}</b></p>
     </div>
 </div> <!--End of Pokemon Grid-->
 
-<pagination-controls></pagination-controls>
+<pagination-controls (pageChange)="page = $event; pokemons = []; getPokemons()"></pagination-controls>
