@@ -16,7 +16,7 @@ export class DataService {
   }
 
   //Get More Pokemons Data
-  getMorPokemonedata(name: string) {
+  getMorePokemoneData(name: string) {
     return this.http.get(`https://pokeapi.co/api/v2/pokemon/${name}`);
   }
 }

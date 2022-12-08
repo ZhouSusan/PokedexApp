@@ -17,7 +17,7 @@ export class PokemonListComponent {
     this.dataService.getPokemons()
     .subscribe((response: any) => {
       response.results.forEach((result: any) => {
-        this.dataService.getMorPokemonedata(result.name)
+        this.dataService.getMorePokemoneData(result.name)
           .subscribe((unqiueResponse: any) => {
             this.pokemons.push(unqiueResponse);
             console.log(this.pokemons);
