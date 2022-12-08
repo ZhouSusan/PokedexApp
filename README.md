@@ -1,11 +1,12 @@
 # PokedexApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 This is a learning repo based on a [youtube tutorial](https://www.youtube.com/watch?v=ov9UqIEa8Zs).
 In this repo, PokeApi is integrated with Angular to create a Pokedex Application.
 
 <img src="src\assets\images\image1.JPG" alt="page2">
 <img src="src\assets\images\image2.JPG" alt="page112">
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.2.
 
 ## Development server
 
