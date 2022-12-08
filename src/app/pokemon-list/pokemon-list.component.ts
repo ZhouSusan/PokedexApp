@@ -11,4 +11,10 @@ export class PokemonListComponent {
     private dataService : DataService
   ) {}
 
+  ngOnInit(): void {
+    this.dataService.getPokemons()
+    .subscribe((response: any) => {
+      console.log(response);
+    })
+  }
 }
