@@ -7,6 +7,8 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./pokemon-list.component.css']
 })
 export class PokemonListComponent {
+  pokemons: any[] = [];
+
   constructor(
     private dataService : DataService
   ) {}
@@ -14,7 +16,13 @@ export class PokemonListComponent {
   ngOnInit(): void {
     this.dataService.getPokemons()
     .subscribe((response: any) => {
-      console.log(response);
+      response.results.forEach((result: any) => {
+        this.dataService.getMorPokemonedata(result.name)
+          .subscribe((unqiueResponse: any) => {
+            this.pokemons.push(unqiueResponse);
+            console.log(this.pokemons);
+          })
+      })
     })
   }
 }
