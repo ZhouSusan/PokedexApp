@@ -1,7 +1,14 @@
 <!-- Pokemon Grid-->
 <div class="pokemon-grid">
-    <div class ="box">1</div>
-    <div class ="box">2</div>
-    <div class ="box">3</div>
-    <div class ="box">4</div>
+    <div class ="box" *ngFor="let pokemon of pokemons">
+        <img [src]="pokemon.sprites.front_default" alt="Pokemon_image">
+        <h3>{{ pokemon.name }}</h3>
+        <p>Id: <b>{{ pokemon.id }}</b></p>
+        <p>Type: <b> {{ pokemon.types[0].type.name }}</b></p>
+        <p>Height: <b> {{ pokemon.height }}</b></p>
+        <p>Weight: <b> {{pokemon.weight }} </b></p>
+        <p>Health: <b>{{ pokemon.stats[0].base_stat }}</b></p>
+        <p>Attack Power: <b> {{ pokemon.stats[1].base_stat }}</b></p>
+        <p>Abilities: <b> {{ pokemon.abilities[0].ability.name }}, {{ pokemon.abilities[1].ability.name }}</b></p>
+    </div>
 </div> <!--End of Pokemon Grid-->
