@@ -1,6 +1,9 @@
 <!-- Pokemon Grid-->
 <div class="pokemon-grid">
-    <div class ="box" *ngFor="let pokemon of pokemons">
+    <div 
+    class ="box" 
+    *ngFor="let pokemon of pokemons | paginate : { itemsPerPage: 10, currentPage: page, totalItems: totalPokemons }"
+    >
         <img [src]="pokemon.sprites.front_default" alt="Pokemon_image">
         <h3>{{ pokemon.name }}</h3>
         <p>Id: <b>{{ pokemon.id }}</b></p>
@@ -12,3 +15,5 @@
         <p>Abilities: <b> {{ pokemon.abilities[0].ability.name }}, {{ pokemon.abilities[1].ability.name }}</b></p>
     </div>
 </div> <!--End of Pokemon Grid-->
+
+<pagination-controls></pagination-controls>

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 @Component({
@@ -6,8 +6,10 @@ import { DataService } from '../services/data.service';
   templateUrl: './pokemon-list.component.html',
   styleUrls: ['./pokemon-list.component.css']
 })
-export class PokemonListComponent {
+export class PokemonListComponent implements OnInit {
   pokemons: any[] = [];
+  page = 1;//page value
+  totalPokemons: number | undefined;
 
   constructor(
     private dataService : DataService
@@ -16,6 +18,8 @@ export class PokemonListComponent {
   ngOnInit(): void {
     this.dataService.getPokemons()
     .subscribe((response: any) => {
+      this.totalPokemons = response.count;
+      
       response.results.forEach((result: any) => {
         this.dataService.getMorePokemoneData(result.name)
           .subscribe((unqiueResponse: any) => {
